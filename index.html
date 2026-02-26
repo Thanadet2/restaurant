@@ -449,7 +449,7 @@
              const guests = document.getElementById('guestCount').value;
     
     // วาง URL ที่คุณได้มาตรงนี้ครับ
-        const scriptURL = "https://script.google.com/macros/s/AKfycbxqaNNhgfYrNKA3AfjDZrMFrs07wGMV7bK606Z2g6GwIeNi4wRMUdPgYa-3EKt9ikPi/exec"; 
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxV2hyY3XvSPrfcCdhj_xquFJo9eKqbwH0jpVY-Tjb-UX8yWH95rbeobJ3Cm8cfVRrh/exec"; 
 
             if(!table || !guests) {
             Swal.fire('ข้อมูลไม่ครบ', 'กรุณาเลือกเบอร์โต๊ะและจำนวนคน', 'warning');
@@ -465,11 +465,11 @@
         };
 
     // ส่งข้อมูลไปที่ Google Sheets (บรรทัดที่ต้องเพิ่มจริง ๆ คือส่วนนี้ครับ)
-    fetch(scriptURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(orderForSheet)
-    });
+        fetch(scriptURL, {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(orderForSheet)
+        });
             // --- ตัดสต็อกจริง (Critical Step) ---
             cart.forEach(cartItem => {
                 const stockItem = menuItems.find(i => i.id === cartItem.id);
@@ -682,4 +682,5 @@
 </body>
 
 </html>
+
 
