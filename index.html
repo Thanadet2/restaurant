@@ -443,15 +443,19 @@
         };
 
         // 4. Submit Order
-        window.submitOrder = () => {
-            const table = document.getElementById('tableNo').value;
-            const guests = document.getElementById('guestCount').value;
+        // ในไฟล์ index.html ให้หาฟังก์ชันนี้
+         window.submitOrder = () => {
+             const table = document.getElementById('tableNo').value;
+             const guests = document.getElementById('guestCount').value;
+    
+    // วาง URL ที่คุณได้มาตรงนี้ครับ
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxqaNNhgfYrNKA3AfjDZrMFrs07wGMV7bK606Z2g6GwIeNi4wRMUdPgYa-3EKt9ikPi/exec"; 
 
             if(!table || !guests) {
-                Swal.fire('ข้อมูลไม่ครบ', 'กรุณาเลือกเบอร์โต๊ะและจำนวนคน', 'warning');
-                return;
-            }
-            if(cart.length === 0) return;
+            Swal.fire('ข้อมูลไม่ครบ', 'กรุณาเลือกเบอร์โต๊ะและจำนวนคน', 'warning');
+        return;
+        }
+    // ... โค้ดส่วนที่เหลือเหมือนเดิม ...
 
             // --- ตัดสต็อกจริง (Critical Step) ---
             cart.forEach(cartItem => {
@@ -663,4 +667,5 @@
         renderMenu('all');
     </script>
 </body>
+
 </html>
